@@ -22,18 +22,18 @@ class linkedList
    void addElementBack(int value)
    {
       data* s = new data();
-	  s->value = value;
+	   s->value = value;
 			
-	  if (NULL == head)
-	  {
-	     head = s;
-	  }
-	  else
-	  {
-	     current->next = s;
-	  }
-	  s->next = NULL;
-	  current = s;
+	   if (NULL == head)
+	   {
+	      head = s;
+	   }
+	   else
+	   {
+	      current->next = s;
+	   }
+	   s->next = NULL;
+	   current = s;
    }
 		
    void addElementFront(int value)
@@ -47,13 +47,13 @@ class linkedList
    void display()
    {
       data* temp = head;
-	  cout<<"List: ";
-	  while(temp)
-	  {
-	     cout << temp->value << " ";
-	     temp = temp->next;
-	  }
-	  cout<<endl;
+	   cout<<"List: ";
+	   while(temp)
+	   {
+	      cout << temp->value << " ";
+	      temp = temp->next;
+	   }
+	   cout<<endl;
    }
 
    void remove(int value)
@@ -65,17 +65,17 @@ class linkedList
       {
 	     if (temp->value == value)
          {
-	        if (prev == NULL)
-		    {
-		       head = temp->next;
-	        }
-		    else
-		    {
-		       prev->next = temp->next;
+	         if (prev == NULL)
+		      {
+		         head = temp->next;
+	         }
+		      else
+		      {
+		         prev->next = temp->next;
             }
-		    delete temp;
-		    break;
-	     }
+		      delete temp;
+		      break;
+	      }
          prev = temp;
          temp = temp->next;
 	   }
@@ -85,26 +85,26 @@ class linkedList
    {
       data* temp = head;
 
-	  while (temp)
-	  {
+	   while (temp)
+	   {
          data* temp1 = temp->next;
-	     data* prev = temp;
+	      data* prev = temp;
 			   
-	     while (temp1)
-	     {
-	        if (temp->value == temp1->value)
-		    {
-		       prev->next = temp1->next;
-		       delete temp1;
-		       temp1 = prev->next;
+	      while (temp1)
+	      {
+	         if (temp->value == temp1->value)
+		      {
+		         prev->next = temp1->next;
+		         delete temp1;
+		         temp1 = prev->next;
             }
-		    else
-	        {
-		       prev = temp1;
-		       temp1 = temp1->next;
-		    }
-	     }
-	     temp = temp->next;
-	  }
+		      else
+	         {
+		         prev = temp1;
+		         temp1 = temp1->next;
+		      }
+	      }
+	      temp = temp->next;
+	   }
    }
 };
