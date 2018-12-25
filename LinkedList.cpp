@@ -107,4 +107,38 @@ class linkedList
 			temp = temp->next;
 		}
 	}
+
+	void reverse()
+	{
+		data *temp = head;
+		data *prev = NULL;
+		data *next = head;
+
+		while (temp)
+		{
+			next = temp->next;
+			temp->next = prev;
+			prev = temp;
+			temp = next;
+		}
+		head = prev;
+	}
+
+	void reverse(data *node)
+	{
+		if (node->next == NULL)
+		{
+			head = node;
+			return;
+		}
+
+		reverse(node->next);
+		node->next->next = node;
+		node->next = NULL;
+	}
+
+	data *getHead()
+	{
+		return head;
+	}
 };
