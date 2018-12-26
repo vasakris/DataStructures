@@ -137,6 +137,32 @@ class linkedList
 		node->next = NULL;
 	}
 
+	data *reverse(data *node, int k)
+	{
+		if (node == NULL)
+		{
+			return NULL;
+		}
+
+		data *current = node;
+		data *prev = node;
+		data *next = NULL;
+
+		int j = k;
+		while (current && j > 0)
+		{
+			next = current->next;
+			current->next = prev;
+			prev = current;
+			current = next;
+			j--;
+		}
+
+		node->next = reverse(current, k);
+		head = prev;
+		return prev;
+	}
+
 	data *getHead()
 	{
 		return head;
